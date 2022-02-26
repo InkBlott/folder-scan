@@ -3,7 +3,8 @@ const actions = require("./state/actions");
 
 exports.sendFileList = async (req, res) => {
   try {
-    res.status(200).json({ files: store.getState() });
+    const activeFiles = store.getState().filter((item) => item.active === true);
+    res.status(200).json({ activeFiles });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -19,5 +20,9 @@ exports.scan = async (req, res) => {
 };
 
 exports.sendState = async (req, res) => {
-  res.status(200).json(store.getState());
+  try {
+    res.status(200).json({ fullState: store.getState() });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
