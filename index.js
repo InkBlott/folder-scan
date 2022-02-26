@@ -10,5 +10,4 @@ app.use("/", routes);
 
 app.listen(port, () => {
   console.log(`server started on port ${port}`);
-  console.log("http://localhost:3000/list");
 });
