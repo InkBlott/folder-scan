@@ -7,4 +7,4 @@ e.g. FOLDER_PATH=/home/user/foldertoscan
 
 /list - returns active file list
 /scan - re-scans folder
-/download-state - returns active and removed files list
+/download-state - returns full state (active and removed files)
